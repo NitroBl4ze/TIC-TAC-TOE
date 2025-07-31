@@ -191,17 +191,19 @@ const TicTacToe = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="tic-tac-grid grid grid-cols-3 gap-2 mb-6 p-4 rounded-lg bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50">
-            {board.map((cell, index) => (
-              <Button
-                key={index}
-                className="game-cell button-green-hover w-20 h-20 text-2xl font-bold relative"
-                onClick={() => handleCellClick(index)}
-                disabled={cell !== null || currentPlayer !== humanPlayer || gameState !== 'playing'}
-              >
-                <span className="relative z-10">{cell}</span>
-              </Button>
-            ))}
+          <div className="hash-grid mb-6">
+            <div className="grid grid-cols-3 gap-0 w-full h-full absolute inset-0 z-10">
+              {board.map((cell, index) => (
+                <button
+                  key={index}
+                  className="game-cell"
+                  onClick={() => handleCellClick(index)}
+                  disabled={cell !== null || currentPlayer !== humanPlayer || gameState !== 'playing'}
+                >
+                  {cell}
+                </button>
+              ))}
+            </div>
           </div>
           
           <div className="flex gap-2">
