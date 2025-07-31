@@ -38,12 +38,13 @@ const TicTacToe = () => {
   };
 
   const selectPlayer = (player: Player) => {
+    const aiPlayerChoice = player === 'O' ? 'X' : 'O';
     setHumanPlayer(player);
-    setAiPlayer(player === 'X' ? 'O' : 'X');
-    setCurrentPlayer('X'); // X always starts
+    setAiPlayer(aiPlayerChoice);
+    setCurrentPlayer('X'); // X always starts first
     setGameState('playing');
     
-    // If human chose O, AI (X) goes first
+    // If human chose O, then AI is X and goes first
     if (player === 'O') {
       setTimeout(() => makeAIMove(Array(9).fill(null)), 500);
     }
@@ -192,7 +193,7 @@ const TicTacToe = () => {
         </CardHeader>
         <CardContent>
           <div className="hash-grid mb-6">
-            <div className="grid grid-cols-3 gap-0 w-full h-full absolute inset-0 z-10">
+            <div className="game-grid">
               {board.map((cell, index) => (
                 <button
                   key={index}

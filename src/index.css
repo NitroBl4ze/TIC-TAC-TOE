@@ -82,12 +82,15 @@
   position: relative;
 }
 
-/* Hash grid lines */
+/* Hash grid container */
 .hash-grid {
   position: relative;
   width: 300px;
   height: 300px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hash-grid::before,
@@ -96,59 +99,74 @@
   position: absolute;
   background: linear-gradient(90deg, transparent 0%, #4ade80 45%, #22c55e 55%, transparent 100%);
   animation: gridGlow 2s ease-in-out infinite alternate;
+  z-index: 1;
 }
 
-/* Horizontal lines */
+/* Horizontal lines - perfectly centered */
 .hash-grid::before {
   width: 100%;
   height: 4px;
-  top: 33.33%;
-  box-shadow: 0 66px 0 0 currentColor;
+  top: calc(33.333% - 2px);
+  box-shadow: 0 calc(33.333% + 4px) 0 0 #4ade80;
 }
 
-/* Vertical lines */
+/* Vertical lines - perfectly centered */
 .hash-grid::after {
   width: 4px;
   height: 100%;
-  left: 33.33%;
-  box-shadow: 66px 0 0 0 currentColor;
+  left: calc(33.333% - 2px);
+  box-shadow: calc(33.333% + 4px) 0 0 0 #4ade80;
+}
+
+/* Game grid overlay */
+.game-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  z-index: 2;
 }
 
 .game-cell {
   @apply relative bg-transparent border-0 text-4xl font-bold transition-all duration-300;
-  width: 100px;
-  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-.game-cell:hover {
+.game-cell:hover:not(:disabled) {
   @apply transform scale-110;
   text-shadow: 0 0 20px #4ade80;
   color: #4ade80;
 }
 
 .game-cell:disabled {
-  @apply opacity-100 cursor-not-allowed;
+  @apply cursor-not-allowed;
+  color: #ffffff;
 }
 
 .game-cell:disabled:hover {
   @apply transform-none;
   text-shadow: none;
-  color: inherit;
+  color: #ffffff;
 }
 
 @keyframes gridGlow {
   0% {
-    opacity: 0.6;
+    opacity: 0.7;
     filter: brightness(1);
   }
   100% {
     opacity: 1;
-    filter: brightness(1.2);
+    filter: brightness(1.3) drop-shadow(0 0 8px #4ade80);
   }
 }
