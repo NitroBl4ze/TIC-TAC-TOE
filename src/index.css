@@ -72,3 +72,44 @@
 .button-gradient {
   @apply bg-gradient-to-r from-primary to-[#22c55e] hover:opacity-90 transition-opacity rounded-full;
 }
+
+.button-green-hover {
+  @apply bg-transparent border-2 border-border transition-all duration-300 hover:bg-gradient-to-r hover:from-green-400 hover:to-green-600 hover:border-transparent hover:text-white hover:shadow-lg hover:shadow-green-500/25;
+}
+
+.tic-tac-grid {
+  @apply relative;
+}
+
+.tic-tac-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.05) 49%, rgba(255,255,255,0.05) 51%, transparent 55%),
+              linear-gradient(-45deg, transparent 45%, rgba(255,255,255,0.05) 49%, rgba(255,255,255,0.05) 51%, transparent 55%);
+  pointer-events: none;
+  border-radius: 0.5rem;
+}
+
+.game-cell {
+  @apply relative overflow-hidden;
+}
+
+.game-cell::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(74, 222, 128, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-cell:hover::before {
+  opacity: 1;
+}

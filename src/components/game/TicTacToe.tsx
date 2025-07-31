@@ -163,17 +163,15 @@ const TicTacToe = () => {
           <CardContent className="flex gap-4 justify-center">
             <Button 
               size="lg" 
-              variant="outline" 
+              className="button-green-hover text-2xl w-20 h-20"
               onClick={() => selectPlayer('X')}
-              className="text-2xl w-20 h-20"
             >
               X
             </Button>
             <Button 
               size="lg" 
-              variant="outline" 
+              className="button-green-hover text-2xl w-20 h-20"
               onClick={() => selectPlayer('O')}
-              className="text-2xl w-20 h-20"
             >
               O
             </Button>
@@ -193,22 +191,21 @@ const TicTacToe = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-3 gap-2 mb-6">
+          <div className="tic-tac-grid grid grid-cols-3 gap-2 mb-6 p-4 rounded-lg bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50">
             {board.map((cell, index) => (
               <Button
                 key={index}
-                variant="outline"
-                className="w-20 h-20 text-2xl font-bold"
+                className="game-cell button-green-hover w-20 h-20 text-2xl font-bold relative"
                 onClick={() => handleCellClick(index)}
                 disabled={cell !== null || currentPlayer !== humanPlayer || gameState !== 'playing'}
               >
-                {cell}
+                <span className="relative z-10">{cell}</span>
               </Button>
             ))}
           </div>
           
           <div className="flex gap-2">
-            <Button onClick={resetGame} variant="outline" className="flex-1">
+            <Button onClick={resetGame} className="button-green-hover flex-1">
               New Game
             </Button>
           </div>
@@ -228,10 +225,10 @@ const TicTacToe = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex gap-2 mt-4">
-            <Button onClick={resetGame} className="flex-1">
+            <Button onClick={resetGame} className="button-green-hover flex-1">
               Play Again
             </Button>
-            <Button onClick={() => setShowResult(false)} variant="outline">
+            <Button onClick={() => setShowResult(false)} className="button-green-hover">
               Close
             </Button>
           </div>
