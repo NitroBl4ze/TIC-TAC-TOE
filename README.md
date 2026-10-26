@@ -1,69 +1,43 @@
-# Welcome to your Lovable project
+# 🎮 Interactive Tic-Tac-Toe Game
 
-## Project info
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
+![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JavaScript-orange.svg)
 
-**URL**: https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d
+An interactive, responsive, and lightweight **Tic-Tac-Toe** web game built from scratch using vanilla web technologies. Designed with clean UI styling, intuitive game logic, dynamic win/draw detection, and seamless turn transitions.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🌟 Features
 
-**Use Lovable**
+- **🎮 Dual-Player Gameplay:** Classic turn-based 2-player mode (`X` vs `O`).
+- **🏆 Smart Win & Tie Detection:** Evaluates all winning patterns (rows, columns, diagonals) and detects draws immediately upon board exhaustion.
+- **📱 Fully Responsive Design:** Clean layout scaling smoothly across desktop, tablet, and mobile browsers.
+- **⚡ Instant Board Reset:** Smooth reset functionality to clear moves, reset status indicators, and start a fresh round without page reloads.
+- **✨ Fluid Micro-Interactions:** Tactile cell-click responses and real-time status indicators showing whose turn is active.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Built With
 
-**Use your preferred IDE**
+- **HTML5:** Semantic grid structure and markup layout.
+- **CSS3:** Responsive CSS Grid/Flexbox, custom color scheme, and hover states.
+- **JavaScript (ES6):** State management, turn alternations, winning algorithm checks, and DOM manipulation.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Live Demo / Preview
 
-Follow these steps:
+<!-- If you deploy it via GitHub Pages, add your live link below -->
+> 🌐 **Live Demo:** [Play Tic-Tac-Toe](https://nitrobl4ze.github.io/TIC-TAC-TOE/) *(Enable via GitHub Pages settings if not active)*
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📂 Project Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/92dc0c12-c831-4ed8-9ab7-0f875920f45d) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+```text
+TIC-TAC-TOE/
+├── index.html       # Primary game board structure & markup
+├── style.css        # Responsive styling & layout
+├── script.js        # Core game logic, state machine & win checks
+└── README.md        # Documentation
